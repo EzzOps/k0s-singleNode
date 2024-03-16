@@ -7,5 +7,5 @@ You can initialize this file using the `k0sctl init` command. The output will be
 
 To customize and bootstrap the `k0sctl.yaml` file, use the following command:
 `k0sctl init --k0s <username>@<IP> > k0sctl.yaml`
-This command initializes a file containing a basic/general configuration file `ClusterConfig`, `Cluster`.
+This command initializes a file containing a basic/general configuration file `hosts:`, `  k0s:`.
 and this option "--k0s" will add the default cluster configration
