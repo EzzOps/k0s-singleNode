@@ -3,13 +3,17 @@ kind: Cluster
 metadata:
   name: k0s-cluster
 spec:
+  # for reference, see https://github.com/k0sproject/k0sctl/blob/main/README.md#host-fields
   hosts:
   - ssh:
       address: 10.0.0.3
       user: ubuntu
       port: 22
       keyPath: null
-    role: controller
+    role: single # single, controller, worker
+    # environment:
+    #   HTTP_PROXY: 10.0.0.1:443
+  # for reference, see https://github.com/k0sproject/k0sctl/blob/main/README.md#k0s-fields
   k0s:
     version: null
     versionChannel: stable
@@ -20,6 +24,7 @@ spec:
       metadata:
         name: k0s
       spec:
+        # for reference, see https://docs.k0sproject.io/main/configuration/#specapi
         api:
           k0sApiPort: 9443
           port: 6443
